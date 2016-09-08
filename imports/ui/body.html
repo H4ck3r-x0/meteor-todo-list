@@ -1,0 +1,62 @@
+<body>
+  <div class="ui container">
+      <header style="margin-top: 10px;">
+        <div class="ui stackable container menu">
+          <div class="item">
+            <img src="/images/icons/new-task.png">
+          </div>
+          <div class="right menu">
+            <div class="item">
+                <div class="ui positive button">{{> loginButtons}}</div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+
+    {{#if currentUser}}
+
+          <br>
+          <form class="ui form new-task">
+            <div class="field">
+              <input type="text" name="text" placeholder="Add new task..">
+            </div>
+          </form>
+          <br>
+
+          <div class="ui mini info icon message">
+            <i class="notched circle loading icon"></i>
+            <div class="content">
+              <div class="header">
+                You have {{incompleteCount}} incomplete tasks.
+              </div>
+              <p>
+                <div class="ui checkbox">
+                  <input type="checkbox" class="hide-completed">
+                  <label>Hide Completed Tasks</label>
+                </div>
+              </p>
+            </div>
+          </div>
+
+        <ul class="ui mini middle aligned divided list">
+          {{#each tasks}}
+            {{> task}}
+          {{/each}}
+        </ul>
+
+        {{else}}
+
+        <div class="ui orange icon message">
+            <i class="info icon"></i>
+            <div class="content">
+              <div class="header">
+                Weclome, please login or register.
+              </div>
+            </div>
+        </div>
+
+    {{/if}}
+
+  </div>
+</body>

@@ -1,0 +1,19 @@
+<template name="task">
+  <div class="item">
+    <div class="right floated content">
+
+        <div class="ui mini buttons">
+          <div class="ui mini  toggle checkbox" >
+            <input type="checkbox" class="complete" checked="{{checked}}" name="public">
+            <label></label>
+          </div>
+
+          <button class="ui red button remove"><i class="delete icon"></i></button>
+        </div>
+    </div>
+  <img class="ui avatar image" src="/images/icons/new-task.png">
+  <div class="content">
+    {{text}}
+  </div>
+</div>
+</template>
